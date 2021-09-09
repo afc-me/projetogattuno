@@ -1,0 +1,155 @@
+﻿Create database if not exists RestauranteBD;
+
+Use RestauranteBD;
+
+drop table if exists LoginBD;
+drop table if exists ProdutosBD;
+drop table if exists FuncionariosBD;
+drop table if exists PedidosBD;
+
+Create table LoginBD
+(
+    Codigo  int(10)      not null primary key,
+    Usuario Varchar(100) not null,
+    Senha   Varchar(32)  not null
+);
+
+Create table ProdutosBD
+(
+    Codigo      int(10)      not null primary key,
+    Produto     Varchar(20)  not null,
+    Descricao   Varchar(100) not null,
+    PrecoCompra float(10,2)  not null,
+    PrecoVenda  float(10,2)  not null,
+    Qtde        int(10)      not null,
+    Total       float(10,2)  not null
+);
+
+Create table FuncionariosBD
+(
+    Codigo   int(10)      not null primary key,
+    Nome     Varchar(100) not null,
+    Funcao   Varchar(45)  not null,
+    CPF      char(14)     not null,
+    CEP      char(9)      not null,
+    NResid   int(10)      not null,
+    Endereco Varchar(100) not null,
+    Bairro   Varchar(100) not null,
+    Cidade   Varchar(100) not null,
+    Estado   char(2)      not null,
+    Telefone char(13)     not null,
+    Email    Varchar(64)  not null
+);
+
+Create table PedidosBD
+(
+    Codigo   int(10)      not null primary key,
+    Data     char(10)     not null,
+    Hora     char(5)      not null,
+    NomeCli  Varchar(100) not null
+);
+
+Insert into LoginBD Values
+(       1, 'ROSA',                  '123'),
+(       2, 'ANDRE',                 '321'),
+(       3, 'VOVODOBAILE',           'QWERTY'),
+(       4, 'RONALDINHO43',          '30-11-1996'),
+(       5, 'SOPADELETRINHAS',       'OMGPLSDST'),
+(       6, 'MANEDOJEGUE',           'IDIOTADAVIZINHANÇA');
+
+Insert into ProdutosBD Values
+(       1, 'BATATA',                'BATATA PRE-FRITA 1.1 KG GOLDEN FOODS',                12.5,   18.75,  2,      37.5),
+(       2, 'BATATA',                'BATATA PRE-FRITA 2.0 KG CHEF',                        15.9,   23.85,  2,      47.7),
+(       3, 'FRANGO',                'FRANGO A PASSARINHO 1 KG SEARA',                      8,      12,     5,      60),
+(       4, 'FRANGO',                'FRANGO COXA 1 KG',                                    9,      13.5,   14,     189),
+(       5, 'FRANGO',                'FRANGO COXINHA DE ASAS 1 KG SEARA',                   11.9,   17.85,  15,     267.75),
+(       6, 'FRANGO',                'FRANGO EMPANADO 300 G LAR CAIXA',                     4.5,    6.75,   17,     114.75),
+(       7, 'FRANGO',                'FRANGO FILE DE PEITO 1 KG',                           12.9,   19.35,  19,     367.65),
+(       8, 'FRANGO',                'FRANGO STEAK 100 G SEARA',                            1.2,    1.8,    7,      12.6),
+(       9, 'FRANGO',                'FRANGO TIRINHA AURORA 300 G',                         4.9,    7.35,   9,      66.15),
+(      10, 'GELADINHO',             'GELADINHO ARTIFICIAL',                                0.5,    0.75,   19,     14.25),
+(      11, 'GELADINHO',             'GELADINHO NATURAL',                                   1,      1.5,    99,     148.5),
+(      12, 'HAMBURGUER',            'HAMBURGUER CARNE 56 G SEARA E PERDIGAO',              0.75,   1.12,   240,    268.8),
+(      13, 'HAMBURGUER',            'HAMBURGUER SANDUICHE 130 G AURORA',                   4.8,    7.2,    7,      50.4),
+(      14, 'LASANHA',               'LASANHA 600 G MASSALEVE',                             7.5,    11.25,  8,      90),
+(      15, 'LASANHA',               'LASANHA 600 G PERDIGAO',                              9.5,    14.25,  0,      0),
+(      16, 'LASANHA',               'LASANHA 600 G SADIA',                                 11.9,   17.85,  5,      89.25),
+(      17, 'LINGUICA',              'LINGUICA TOSACANA',                                   14.9,   22.35,  1,      22.35),
+(      18, 'PAO',                   'PAO DE QUEIJO 1 KG',                                  10.9,   16.35,  3,      49.05),
+(      19, 'PIZZA',                 'PIZZA CAIXA AURORA',                                  12,     18,     0,      0),
+(      20, 'PIZZA',                 'PIZZA CAIXA SEARA',                                   10,     15,     0,      0),
+(      21, 'SALSICHA',              'SALSICHA 500 G AURORA',                               7.5,    11.25,  2,      22.5),
+(      22, 'SORVETE',               'SORVETE PICOLE',                                      1.5,    2.25,   123,    276.75),
+(      23, 'SORVETE',               'SORVETE POTE 2 L GAROTO',                             13.9,   20.85,  0,      0),
+(      24, 'SORVETE',               'SORVETE POTE 2 L JUNDIA',                             17.9,   26.85,  3,      80.55),
+(      25, 'SORVETE',               'SORVETE POTE 2 L KIBOM',                              13.9,   20.85,  1,      20.85),
+(      26, 'SORVETE',               'SORVETE POTE 2 L OGGI',                               14.9,   22.35,  0,      0),
+(      27, 'SORVETE',               'SORVETE POTE 200 ML ESKMEL',                          2,      3,      4,      12),
+(      28, 'SORVETE',               'SORVETE POTE 300 ML SORVESAN',                        4,      6,      2,      12),
+(      29, 'SORVETE',               'SORVETE POTE 400 ML ESKMEL',                          3,      4.5,    5,      22.5),
+(      30, 'SORVETE',               'SORVETE POTE 400 ML SORVESAN',                        5,      7.5,    11,     82.5);
+
+Insert into FuncionariosBD Values
+(       1, 'ROBERTO RAUL MIGUEL ASSUNCAO',              'ADMINISTRADOR',  '452.724.937-10', '65635-065', 146,    'RUA VINTE E CINCO',                    'VILA BANDEIRANTE',           'TIMON',                 'MA',  '(98)5880-2633', 'ROBERTO.RAUL@BOL.COM'),
+(       2, 'NELSON MATHEUS PORTO',                      'GARCOM',         '298.428.365-17', '60741-420', 334,    'RUA JAPI',                             'SERRINHA',                   'FORTALEZA',             'CE',  '(65)4980-3343', 'NELSONMP@GMAIL.COM'),
+(       3, 'THEO KEVIN DA MATA',                        'FUNCIONARIO',    '778.862.123-47', '21670-010', 920,    'PRAÇA CARMELA DUTRA',                  'GUADALUPE',                  'RIO DE JANEIRO',        'RJ',  '(63)6827-0082', 'THEOPARASEMPRE@HOTMAIL.COM'),
+(       4, 'ERICK BRYAN NATHAN FIGUEIREDO',             'GARCOM',         '366.512.816-15', '67033-280', 1192,   'PASSAGEM SOL NASCENTE',                'PATO MACHO',                 'ANANINDEUA',            'PA',  '(68)1008-7120', 'BRY.FIGUEIREDO@YAHOO.COM.BR'),
+(       5, 'IGOR BENTO MURILO NUNES',                   'FUNCIONARIO',    '129.422.854-43', '85860-100', 658,    'TRAVESSA PATI',                        'VILA RESIDENCIAL A',         'FOZ DO IGUAÇU',         'PR',  '(48)1318-2093', 'IGOR.YOGURTE@ETEC.SP.GOV.BR'),
+(       6, 'BENTO PEDRO HENRIQUE REZENDE',              'GARCOM',         '561.726.842-21', '65058-424', 521,    'RUA BEQUIMAO',                         'CIDADE OPERARIA',            'SAO LUIS',              'MA',  '(02)4448-4564', 'PRINCEOFBELAIR@NOWTHISISASTORY.COM'),
+(       7, 'CALEB BRUNO BARBOSA',                       'COZINHEIRO',     '336.165.184-07', '77019-112', 683,    'QUADRA 1105 SUL ALAMEDA 1',            'PLANO DIRETOR SUL',          'PALMAS',                'TO',  '(84)9621-5523', 'CALEBBBARBOSA@G1.GOV.BR'),
+(       8, 'MATHEUS ENRICO FREITAS',                    'FUNCIONARIO',    '579.548.991-36', '73754-213', 1064,   'QUADRA QC 13',                         'ITAPUA I',                   'PLANALTINA DE GOIAS',   'GO',  '(14)5291-3279', 'ENRICOENPOBRE@HOTMAIL.COM'),
+(       9, 'RYAN FELIPE MARCIO SILVA',                  'GARCOM',         '594.716.517-19', '69035-844', 456,    'BECO DO IGARAPE V',                    'COMPENSA',                   'MANAUS',                'AM',  '(17)2574-7278', 'RYANMARCIO@GMAIL.COM.BR'),
+(      10, 'MARCELO DANILO ALMADA',                     'FUNCIONARIO',    '164.181.467-51', '69904-645', 1507,   'RUA DA PAZ',                           'JOÃO EDUARDO',               'RIO BRANCO',            'AC',  '(84)9177-3878', 'MARCELERATOR@YAHOO.COM.BR'),
+(      11, 'ROBERTO ELIAS EDSON PINTO',                 'FUNCIONARIO',    '323.816.871-14', '37900-082', 822,    'RUA SANTO ANTÔNIO',                    'CENTRO',                     'PASSOS',                'MG',  '(96)3456-2107', 'ROB.ELI.EDS.PIN@BOL.COM'),
+(      12, 'BEATRIZ LUCIANA SONIA DOS SANTOS',          'FUNCIONARIO',    '677.065.825-90', '68552-110', 803,    'RUA C-OITO',                           'CAPUAVA',                    'REDENÇÃO',              'PA',  '(94)3803-4113', 'BEATRIZLUCIANASONIADOSSANTOS_@YAHOOL.COM'),
+(      13, 'FRANCISCA JULIA ALVES',                     'FUNCIONARIO',    '573.030.416-13', '26298-102', 206,    'PRAÇA SÃO JOSÉ',                       'JARDIM GUANDU',              'NOVA IGUAÇU',           'RJ',  '(21)3942-0921', 'FRANCISCAJULIAALVES__FRANCISCAJULIAALVES@IACIT.COM.BR'),
+(      14, 'REGINA TATIANE ELAINE BERNARDES',           'FUNCIONARIO',    '829.788.768-59', '49004-400', 505,    'RUA A',                                'ZONA DE EXPANSÃO (ROBALO)',  'ARACAJU',               'SE',  '(79)3738-9063', 'RREGINATATIANEELAINEBERNARDES@MCPSOLUCOESGRAFICAS.COM.BR'),
+(      15, 'MARIANE APARECIDA ANALU CASTRO',            'ADMINISTRADOR',  '610.114.447-04', '29701-475', 440,    'BECO SÃO BRAZ',                        'PERPÉTUO SOCORRO',           'COLATINA',              'ES',  '(27)3539-8443', 'MARIANEAPARECIDAANALUCASTRO-78@DKCARMO.COM'),
+(      16, 'RAQUEL FERNANDA ALMEIDA',                   'FUNCIONARIO',    '005.272.414-07', '75043-070', 331,    'TRAVESSA GEDEON',                      'SETOR CENTRAL',              'ANÁPOLIS',              'GO',  '(62)3955-5390', 'RRAQUELFERNANDAALMEIDA@R7.COM'),
+(      17, 'CARLOS GUSTAVO SOUZA',                      'FUNCIONARIO',    '899.388.878-72', '65068-461', 522,    '2ª TRAVESSA SANTA ROSA',               'SANTA ROSA',                 'SÃO LUÍS',              'MA',  '(98)2594-9812', 'CARLOSGUSTAVOSOUZA__CARLOSGUSTAVOSOUZA@HOTMAIL.CO.JP'),
+(      18, 'DAIANE BENEDITA GOMES',                     'FUNCIONARIO',    '804.729.032-09', '03330-010', 381,    'VILA GONÇALVES',                       'QUARTA PARADA',              'SÃO PAULO',             'SP',  '(11)2632-4480', 'DAIANEBENEDITAGOMES..DAIANEBENEDITAGOMES@OGN.COM.BR'),
+(      19, 'NAIR PIETRA BETINA FOGACA',                 'FUNCIONARIO',    '173.132.451-06', '64036-750', 468,    'RESIDENCIAL NOVA ALEGRIA III',         'PARQUE SUL',                 'TERESINA',              'PI',  '(86)2827-2631', 'NAIRPIETRABETINAFOGACA..NAIRPIETRABETINAFOGACA@KEFFIN.COM.BR'),
+(      20, 'LUCCA CLAUDIO CARVALHO',                    'FUNCIONARIO',    '282.144.289-04', '69087-200', 693,    'RUA ARACI DE ALMEIDA',                 'TANCREDO NEVES',             'MANAUS',                'AM',  '(92)3781-5650', 'LUCCACLAUDIOCARVALHO-91@PANEVALE.COM.BR'),
+(      21, 'SABRINA CARLA SALES',                       'FUNCIONARIO',    '225.559.399-89', '69020-162', 573,    'BECO FRED ASTAIRE',                    'CENTRO',                     'MANAUS',                'AM',  '(92)2953-1071', 'SABRINACARLASALES..SABRINACARLASALES@DJAPAN.COM.BR'),
+(      22, 'VINICIUS PEDRO HENRIQUE MELO',              'FUNCIONARIO',    '587.592.521-38', '45075-500', 183,    'RUA H',                                'IBIRAPUERA',                 'VITÓRIA DA CONQUISTA',  'BA',  '(77)2666-2299', 'VINICIUSPEDROHENRIQUEMELO_@FOXTECH.COM.BR'),
+(      23, 'GUILHERME ENRICO DOS SANTOS',               'FUNCIONARIO',    '610.592.719-31', '13485-107', 477,    'RUA OCTÁVIO GUEDES DA CUNHA',          'JARDIM SANTA CATARINA',      'LIMEIRA',               'SP',  '(19)3537-5331', 'GUILHERMEENRICODOSSANTOS__GUILHERMEENRICODOSSANTOS@YAHOO.COM'),
+(      24, 'CAROLINA VANESSA ISIS MENDES',              'FUNCIONARIO',    '391.086.137-70', '58051-818', 479,    'RUA JOSÉ CORDEIRO DA COSTA',           'JARDIM CIDADE UNIVERSITÁRIA', 'JOÃO PESSOA',           'PB',  '(83)2987-0241', 'CAROLINAVANESSAISISMENDES_@DEMASI.COM.BR'),
+(      25, 'SEBASTIAO PEDRO HENRIQUE RENAN DA LUZ',     'ADMINISTRADOR',  '532.949.296-33', '87310-080', 224,    'RUA DAS MISSÕES',                      'JARDIM TROPICAL II',         'CAMPO MOURÃO',          'PR',  '(44)2587-1217', 'SEBASTIAOPEDROHENRIQUERENANDALU@LIMAO.COM.BR'),
+(      26, 'CLAUDIA ELZA LUIZA MOREIRA',                'FUNCIONARIO',    '400.808.341-32', '50720-655', 518,    'AVENIDA CAXANGÁ',                      'ZUMBI',                      'RECIFE',                'PE',  '(81)2765-3611', 'CLAUDIAELZALUIZAMOREIRA-95@PREDIALNET.COM.BR'),
+(      27, 'FRANCISCA SOPHIA ISABELLA DAS NEVES',       'FUNCIONARIO',    '280.476.681-02', '69318-752', 883,    'RUA GOVERNADOR CLOVES NOVA DA COSTA',  'DR. AIRTON ROCHA',           'BOA VISTA',             'RR',  '(95)2960-0629', 'FRANCISCASOPHIAISABELLADASNEVES_@PPCONSULTING.COM.BR'),
+(      28, 'ISIS HELOISA ALESSANDRA DAS NEVES',         'FUNCIONARIO',    '817.189.360-01', '49030-563', 325,    'RUA TREZE',                            'FAROLÂNDIA',                 'ARACAJU',               'SE',  '(79)3843-6433', 'IISISHELOISAALESSANDRADASNEVES@CONTROTEL.COM.BR'),
+(      29, 'BERNARDO PIETRO GUSTAVO DA SILVA',          'FUNCIONARIO',    '074.081.870-81', '38082-015', 385,    'RUA ABRÃO MIGUÉL ABDANUR',             'MANHATTAN',                  'UBERABA',               'MG',  '(34)2745-0186', 'BERNARDOPIETROGUSTAVODASILVA_@RENOVESEUSEGURO.COM'),
+(      30, 'ROBERTO DAVI ASSUNÇAO',                     'FUNCIONARIO',    '905.049.968-60', '65909-125', 259,    'RUA DA FIGUEIRA',                      'CAMAÇARI',                   'IMPERATRIZ',            'MA',  '(98)3930-6063', 'ROBERTODAVIASSUNCAO_@OPCAOEDUCA.COM.BR');
+
+Insert into PedidosBD Values
+(       1, '23/04/2019', '21:51', 'BENTO PEDRO HENRIQUE'),
+(       2, '12/06/2019', '13:42', 'CALEB BRUNO BARBOSA'),
+(       3, '26/05/2019', '15:33', 'MATHEUS ENRICO FREITAS'),
+(       4, '29/03/2019', '07:24', 'CAUA JOSE BRUNO PEREIRA'),
+(       5, '08/10/2019', '19:15', 'ANDERSON HEITOR SANTOS'),
+(       6, '11/06/2011', '23:29', 'YAGO MATHEUS THOMAS PEIXOTO'),
+(       7, '20/03/2002', '11:21', 'CALEB FILIPE SANTOS'),
+(       8, '23/02/2012', '00:54', 'ENRICO LUIS CARVALHO'),
+(       9, '30/07/2011', '18:30', 'DIEGO BENJAMIN SERGIO CARDOSO'),
+(      10, '29/04/2019', '22:37', 'ARTHUR LEVI CALEB PINTO'),
+(      11, '01/06/2009', '14:31', 'IAN VITOR RAIMUNDO DA CRUZ'),
+(      12, '21/03/2019', '03:46', 'LUCCA JUAN DE PAULA'),
+(      13, '29/01/2015', '02:56', 'AUGUSTO GABRIEL TEIXEIRA'),
+(      14, '10/03/2017', '23:06', 'FLAVIA ISABELLY REGINA CARDOSO'),
+(      15, '01/07/2016', '07:19', 'SOPHIE ANTONIA SIMONE RAMOS'),
+(      16, '10/10/2015', '00:16', 'ELOA CECILIA NOGUEIRA'),
+(      17, '11/04/2015', '04:46', 'ENZO NICOLAS HEITOR DOS SANTOS'),
+(      18, '19/01/2019', '15:47', 'MARIO ELIAS BARROS'),
+(      19, '20/02/2017', '03:55', 'CALEBE LUCCA NICOLAS ASSIS'),
+(      20, '20/06/2019', '20:33', 'LAURA HELENA SARA TEIXEIRA'),
+(      21, '21/03/2019', '11:23', 'NAIR SIMONE GIOVANNA SILVEIRA'),
+(      22, '03/12/2015', '04:01', 'MARTIN KEVIN APARICIO'),
+(      23, '13/10/2016', '20:50', 'MARIO LUIZA DA MATA'),
+(      24, '03/01/2018', '15:41', 'EDUARDO RAUL NATHAN MORAES'),
+(      25, '09/04/2018', '08:17', 'KAIQUE CAIO NOGUEIRA'),
+(      26, '09/11/2014', '05:03', 'THEO CAIO TOMAS RIBEIRO'),
+(      27, '08/04/2015', '01:29', 'RODRIGO CALEBE HENRY DA MATA'),
+(      28, '27/08/2019', '13:36', 'FLAVIA SARA NASCIMENTO'),
+(      29, '06/12/2018', '12:13', 'SAMUEL MARCOS NOAH DIAS'),
+(      30, '02/08/2019', '03:40', 'VERA ANA LOUISE COSTA');
+

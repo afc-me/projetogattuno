@@ -1,0 +1,17 @@
+F:\18_06\Projeto_TCC\Projeto_TCC\bin\Release\Projeto_TCC.exe.config
+F:\18_06\Projeto_TCC\Projeto_TCC\bin\Release\Projeto_TCC.exe
+F:\18_06\Projeto_TCC\Projeto_TCC\bin\Release\Projeto_TCC.pdb
+F:\18_06\Projeto_TCC\Projeto_TCC\obj\Release\Projeto_TCC.csprojAssemblyReference.cache
+F:\18_06\Projeto_TCC\Projeto_TCC\obj\Release\Projeto_TCC.Administrador.resources
+F:\18_06\Projeto_TCC\Projeto_TCC\obj\Release\Projeto_TCC.frmClientes.resources
+F:\18_06\Projeto_TCC\Projeto_TCC\obj\Release\Projeto_TCC.frmFuncionarios.resources
+F:\18_06\Projeto_TCC\Projeto_TCC\obj\Release\Projeto_TCC.frmLogin.resources
+F:\18_06\Projeto_TCC\Projeto_TCC\obj\Release\Projeto_TCC.frmPedidos.resources
+F:\18_06\Projeto_TCC\Projeto_TCC\obj\Release\Projeto_TCC.frmPizzas.resources
+F:\18_06\Projeto_TCC\Projeto_TCC\obj\Release\Projeto_TCC.frmProdutos.resources
+F:\18_06\Projeto_TCC\Projeto_TCC\obj\Release\Projeto_TCC.Inicio.resources
+F:\18_06\Projeto_TCC\Projeto_TCC\obj\Release\Projeto_TCC.Properties.Resources.resources
+F:\18_06\Projeto_TCC\Projeto_TCC\obj\Release\Projeto_TCC.csproj.GenerateResource.cache
+F:\18_06\Projeto_TCC\Projeto_TCC\obj\Release\Projeto_TCC.csproj.CoreCompileInputs.cache
+F:\18_06\Projeto_TCC\Projeto_TCC\obj\Release\Projeto_TCC.exe
+F:\18_06\Projeto_TCC\Projeto_TCC\obj\Release\Projeto_TCC.pdb
